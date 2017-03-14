@@ -2,7 +2,7 @@ package components
 
 
 import models.{Employee, EmployeeTable}
-import providers.DBProvider
+import providers.{MySqlProvider, DBProvider, PostGresDBProvider}
 import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global
 
@@ -50,4 +50,4 @@ def insertOrUpdate(employee: Employee)={
 
 }
 
-object EmployeeComponent extends EmployeeComponent
+object EmployeeComponent extends EmployeeComponent with PostGresDBProvider    //change here to change the database(mySql or Postgres)

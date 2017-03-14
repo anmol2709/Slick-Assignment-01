@@ -2,7 +2,7 @@ package components
 
 import components.ProjectComponent._
 import models._
-import providers.DBProvider
+import providers.{PostGresDBProvider, DBProvider,MySqlProvider}
 import scala.concurrent.Future
 
 trait DependentComponent extends DependentTable{
@@ -47,4 +47,4 @@ trait DependentComponent extends DependentTable{
 
 }
 
-object DependentComponent extends DependentComponent
+object DependentComponent extends DependentComponent  with PostGresDBProvider    //change here to change the database(mySql or Postgres)

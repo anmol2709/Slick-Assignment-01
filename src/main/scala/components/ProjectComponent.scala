@@ -1,7 +1,7 @@
 package components
 
 import models.{Employee, Project, ProjectTable}
-import providers.DBProvider
+import providers.{PostGresDBProvider, DBProvider,MySqlProvider}
 import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global
 
@@ -46,4 +46,4 @@ trait ProjectComponent extends ProjectTable {
   }
 
 }
-object ProjectComponent extends ProjectComponent
+object ProjectComponent extends ProjectComponent  with PostGresDBProvider    //change here to change the database(mySql or Postgres)

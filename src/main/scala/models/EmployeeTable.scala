@@ -1,8 +1,8 @@
 package models
 
-import providers.{MySqlProvider, DBProvider, PostGresDBProvider}
+import providers.{ DBProvider}
 
-trait EmployeeTable extends PostGresDBProvider{   //change here to change the database(mySql or Postgres
+trait EmployeeTable {
   this:DBProvider =>
   import driver.api._
 
